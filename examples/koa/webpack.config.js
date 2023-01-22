@@ -7,7 +7,12 @@ module.exports = {
     rules: [
       {
         test: /\.ts$/,
-        use: "ts-loader",
+        use: {
+          loader: "ts-loader",
+          options: {
+            projectReferences: true,
+          },
+        },
         exclude: /node_modules/,
       },
       {
@@ -24,6 +29,6 @@ module.exports = {
   },
   output: {
     filename: "index.js",
-    path: path.resolve(__dirname, "lib", "src", "client"),
+    path: path.resolve(__dirname, "cjs", "src", "client"),
   },
 };

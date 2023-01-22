@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig",
+  "compilerOptions": {
+    "outDir": "cjs",
+    "module": "CommonJS",
+    "composite": true
+  },
+  "include": ["src"],
+  "references": [
+    {
+      "path": "../../packages/client/tsconfig.cjs.json"
+    },
+    {
+      "path": "../../packages/server-koa/tsconfig.cjs.json"
+    }
+  ]
+}

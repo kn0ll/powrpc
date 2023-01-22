@@ -14,4 +14,4 @@ router.get("/", (ctx) => {
 
 router.all("/welcomeMessage", welcomeMessage);
 
-app.use(serve("lib/src/client")).use(router.routes()).listen(3000);
+app.use(serve("cjs/src/client")).use(router.routes()).listen(3000);
