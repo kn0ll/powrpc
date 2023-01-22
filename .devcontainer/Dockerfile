@@ -9,4 +9,4 @@ RUN npm install -g pnpm@7.25.0
 WORKDIR ${workdir}
 COPY . .
 RUN pnpm install --frozen-lockfile
-RUN pnpm build
+RUN pnpm -r build
