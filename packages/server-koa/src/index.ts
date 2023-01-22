@@ -15,7 +15,8 @@ const koaResponseIO =
   <R extends HttpResponse>([status, response]: R) =>
   () => {
     ctx.response.status = status;
-    ctx.response.body = response;
+    ctx.response.headers["content-type"] = "application/json";
+    ctx.response.body = JSON.stringify(response);
   };
 
 export const koaHandler =
