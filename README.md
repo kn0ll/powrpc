@@ -10,7 +10,7 @@
 - **Type-Safe**: A smart client ensures you are sending the correct parameters to invoke a remote function.
 - **Ergonomic**: Transpile-time reconciliation means there is no development-time tooling. No file watching required. 
 - **Framework Agnostic**: Batteries included, but handlers can be created for any TypeScript HTTP server.
-- **Declarative** (when you want it): Default handlers are declarative, making it simple to test and reasoning about your APIs.
+- **Declarative**: Default handlers are declarative, making it simple to test and reasoning about your APIs.
 
 ## Integrations
 - Next.js
