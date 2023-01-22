@@ -1,8 +1,8 @@
 {
   "name": "@powerpc/client-react",
   "version": "1.0.0",
-  "type": "module",
-  "exports": "./lib/src/index.js",
+  "main": "./cjs/src/index.js",
+  "module": "./lib/src/index.js",
   "types": "lib/src/index.d.ts",
   "devDependencies": {
     "@devexperts/remote-data-ts": "^2.1.1",

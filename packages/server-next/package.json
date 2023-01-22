@@ -1,8 +1,8 @@
 {
   "name": "@powerpc/server-next",
   "version": "1.0.0",
-  "type": "module",
-  "exports": "./lib/src/index.js",
+  "main": "./cjs/src/index.js",
+  "module": "./lib/src/index.js",
   "types": "lib/src/index.d.ts",
   "devDependencies": {
     "next": "^13.1.4",

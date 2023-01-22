@@ -1,4 +1,4 @@
-const nextPlugin = (test: RegExp) => (nextConfig: any) =>
+export const nextPlugin = (test: RegExp) => (nextConfig: any) =>
   Object.assign({}, nextConfig, {
     webpack(config: any, options: any) {
       if (!options.isServer) {
@@ -18,5 +18,3 @@ const nextPlugin = (test: RegExp) => (nextConfig: any) =>
       return config;
     },
   });
-
-export default nextPlugin;

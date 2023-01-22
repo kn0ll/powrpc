@@ -9,10 +9,14 @@
   },
   "files": [],
   "references": [
-    { "path": "packages/client" },
-    { "path": "packages/client-react" },
-    { "path": "packages/server" },
-    { "path": "packages/server-next" },
-    { "path": "packages/webpack-loader" }
+    { "path": "packages/client/tsconfig.json" },
+    { "path": "packages/client/tsconfig.cjs.json" },
+    { "path": "packages/client-react/tsconfig.json" },
+    { "path": "packages/client-react/tsconfig.cjs.json" },
+    { "path": "packages/server/tsconfig.json" },
+    { "path": "packages/server/tsconfig.cjs.json" },
+    { "path": "packages/server-next/tsconfig.json" },
+    { "path": "packages/server-next/tsconfig.cjs.json" },
+    { "path": "packages/webpack-loader/tsconfig.json" }
   ],
 }
