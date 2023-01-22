@@ -40,7 +40,7 @@ importers:
       fp-ts: ^2.13.1
       io-ts: ^2.2.19
       io-ts-types: ^0.5.19
-      next: ^13.0.5
+      next: ^13.1.4
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
@@ -94,7 +94,7 @@ importers:
     specifiers:
       '@powerpc/server': ^1.0.0
       fp-ts: ^2.13.1
-      next: ^13.0.5
+      next: ^13.1.4
       type-fest: ^3.5.2
     dependencies:
       '@powerpc/server': link:../server
