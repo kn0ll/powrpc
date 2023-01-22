@@ -15,14 +15,16 @@ export default () => {
     )
   );
 
-  return result._tag === "RemoteInitial" ? (
-    <p>Waiting...</p>
-  ) : result._tag === "RemotePending" ? (
-    <p>Loading...</p>
-  ) : result._tag === "RemoteFailure" ? (
-    <p>Failed with: {JSON.stringify(result.error)}</p>
-  ) : (
-    <p>Succeeded with: {JSON.stringify(result.value)}</p>
+  return (
+    <p>
+      {result._tag === "RemoteInitial"
+        ? "Waiting..."
+        : result._tag === "RemotePending"
+        ? "Loading..."
+        : result._tag === "RemoteFailure"
+        ? `Failed with: ${JSON.stringify(result.error)}`
+        : `Succeeded with: ${JSON.stringify(result.value)}`}
+    </p>
   );
 };
 
