@@ -9,8 +9,7 @@ const router = new Router();
 
 router.get("/", (ctx) => {
   ctx.type = "html";
-  ctx.body =
-    '<html><body><script type="text/javascript" src="index.js" /></body></html>';
+  ctx.body = '<html><body><script src="index.js"></script></body></html>';
 });
 
 router.all("/welcomeMessage", welcomeMessage);

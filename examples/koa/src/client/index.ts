@@ -2,8 +2,6 @@ import rpc from "@powerpc/client";
 
 import welcomeMessage from "../api/welcomeMessage";
 
-console.log("hello world");
-
 document.write("loading...");
 
 rpc(welcomeMessage)({
