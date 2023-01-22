@@ -117,36 +117,3 @@ export const query =
         )
       )
     );
-
-// import * as f from "fp-ts/function";
-// import * as D from "io-ts/Decoder";
-
-// import * as RPC from ".";
-// import { nextHandler, nextMethod, nextQuery } from "./next";
-
-// const handler = f.flow(
-//   nextMethod("GET"),
-//   nextQuery(D.struct({ name: D.string })),
-//   RPC.chain(({ query }) => RPC.of([200, `hello ${query.name}`] as const))
-// );
-
-// const api = nextHandler(handler);
-
-// export default api;
-
-// // this doesnt work... might need nested infer...?
-// type X = ReturnType<typeof handler>;
-// const api2 = f.pipe(handler, nextHandler);
-
-// // test code
-// const x = { req: { method: "POST", query: { name: "world" } }, res: {} };
-
-// const q = f.pipe(
-//   RPC.of(x),
-//   RPC.method((args: typeof x) => args.req.method)("POST"),
-//   RPC.query((args: typeof x) => args.req.query)(D.struct({ name: D.string })),
-//   RPC.chain(({ query }) => RPC.of([200, `hello ${query.name}`] as const)),
-//   RPC.chainFirstIOK((x) => () => true)
-// );
-
-// q().then(console.log).catch(console.error);
