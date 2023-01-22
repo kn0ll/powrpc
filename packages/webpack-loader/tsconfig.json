@@ -2,8 +2,8 @@
   "extends": "../../tsconfig",
   "compilerOptions": {
     "outDir": "esm",
-    "composite": true,
-    "module": "CommonJS"
+    "module": "ESNext",
+    "composite": true
   },
   "include": ["src"]
 }

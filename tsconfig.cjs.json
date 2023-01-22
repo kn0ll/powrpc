@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "module": "CommonJS",
+    "moduleResolution": "node"
+  },
+  "files": [],
+  "references": [
+    { "path": "packages/client/tsconfig.cjs.json" },
+    { "path": "packages/client-react/tsconfig.cjs.json" },
+    { "path": "packages/server/tsconfig.cjs.json" },
+    { "path": "packages/server-next/tsconfig.cjs.json" },
+    { "path": "packages/webpack-loader/tsconfig.cjs.json" }
+  ],
+}
