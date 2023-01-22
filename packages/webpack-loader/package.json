@@ -1,8 +1,9 @@
 {
   "name": "@powerpc/webpack-loader",
   "version": "1.0.0",
-  "main": "lib/src/index.js",
-  "types": "lib/src/index.d.ts",
+  "main": "./cjs/src/index.js",
+  "module": "./esm/src/index.js",
+  "types": "esm/src/index.d.ts",
   "devDependencies": {
     "@types/node": "18.11.9",
     "webpack": "^5.75.0"

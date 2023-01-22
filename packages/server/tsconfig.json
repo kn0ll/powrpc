@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig",
   "compilerOptions": {
-    "outDir": "lib",
+    "outDir": "esm",
     "composite": true
   },
   "include": ["src"]

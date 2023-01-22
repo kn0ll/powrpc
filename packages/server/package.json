@@ -2,8 +2,8 @@
   "name": "@powerpc/server",
   "version": "1.0.0",
   "main": "./cjs/src/index.js",
-  "module": "./lib/src/index.js",
-  "types": "lib/src/index.d.ts",
+  "module": "./esm/src/index.js",
+  "types": "esm/src/index.d.ts",
   "devDependencies": {
     "io-ts": "^2.2.19"
   },

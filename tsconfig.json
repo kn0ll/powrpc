@@ -17,6 +17,7 @@
     { "path": "packages/server/tsconfig.cjs.json" },
     { "path": "packages/server-next/tsconfig.json" },
     { "path": "packages/server-next/tsconfig.cjs.json" },
-    { "path": "packages/webpack-loader/tsconfig.json" }
+    { "path": "packages/webpack-loader/tsconfig.json" },
+    { "path": "packages/webpack-loader/tsconfig.cjs.json" }
   ],
 }
