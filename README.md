@@ -7,13 +7,18 @@
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=master&repo=591863760)
 
 ## Features
-- Type-Safe
-- Ergonomic
-- Framework Agnostic
-- Declarative
+- **Type-Safe**: A smart client ensures you are sending the correct parameters to invoke a remote function.
+- **Ergonomic**: Transpile-time reconciliation means there is no development-time tooling. No file watching required. 
+- **Framework Agnostic**: We provide popular integrations, but handlers can be created for any TypeScript HTTP server.
+- **Declarative** (when you want it): Default handlers are declarative, making it simple to test and reasoning about your APIs.
 
 ## Integrations
 - Next.js
 - Koa
 - React
 - Webpack
+
+## TODO
+- Automatic API Documentation
+- Automatic API Playground
+- Streaming Responses
