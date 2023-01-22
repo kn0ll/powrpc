@@ -14,7 +14,7 @@ type Ctx = Koa.ParameterizedContext<
   unknown
 >;
 
-const koaResponseIO =
+const responseIO =
   <C extends Ctx>(ctx: C) =>
   <R extends HttpResponse>([status, response]: R) =>
   () => {
@@ -23,7 +23,7 @@ const koaResponseIO =
     ctx.response.body = JSON.stringify(response);
   };
 
-export const koaHandler =
+export const handler =
   <MO, EO extends HttpResponse, AO extends HttpResponse>(
     handler: (rpc: RPC.RPC<unknown, never, Ctx>) => RPC.RPC<MO, EO, AO>
   ): RPC.RpcHandler<MO, EO, AO> =>
@@ -31,8 +31,8 @@ export const koaHandler =
     f.pipe(
       RPC.of(ctx),
       handler,
-      RPC.chainFirstIOK(koaResponseIO(ctx)),
-      RPC.orElseFirstIOK(koaResponseIO(ctx))
+      RPC.chainFirstIOK(responseIO(ctx)),
+      RPC.orElseFirstIOK(responseIO(ctx))
     )();
 
 export const method = RPC.method((ctx: Ctx) => ctx.request.method);

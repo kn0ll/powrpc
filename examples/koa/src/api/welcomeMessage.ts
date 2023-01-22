@@ -8,6 +8,6 @@ const handler = f.flow(
   RPC.chain(({ query }) => RPC.of([200, `hello ${query.name}`] as const))
 );
 
-const x = RPC.koaHandler(handler);
+const x = RPC.handler(handler);
 
 export default x;

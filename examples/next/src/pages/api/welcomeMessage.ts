@@ -8,4 +8,4 @@ const handler = f.flow(
   RPC.chain(({ query }) => RPC.of([200, `hello ${query.name}`] as const))
 );
 
-export default RPC.nextHandler(handler);
+export default RPC.handler(handler);

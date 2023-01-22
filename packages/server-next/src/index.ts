@@ -10,12 +10,12 @@ export * from "@powerpc/server";
 
 type HttpResponse = readonly [number, JsonValue];
 
-const nextResponseIO =
+const responseIO =
   <NR extends NextApiResponse<JsonValue>>(res: NR) =>
   <R extends HttpResponse>([status, response]: R) =>
     IO.of(res.status(status).json(response));
 
-export const nextHandler =
+export const handler =
   <MO, EO extends HttpResponse, AO extends HttpResponse>(
     handler: (
       rpc: RPC.RPC<unknown, never, NextApiRequest>
@@ -25,8 +25,8 @@ export const nextHandler =
     f.pipe(
       RPC.of(req),
       handler,
-      RPC.chainFirstIOK(nextResponseIO(res)),
-      RPC.orElseFirstIOK(nextResponseIO(res))
+      RPC.chainFirstIOK(responseIO(res)),
+      RPC.orElseFirstIOK(responseIO(res))
     )();
 
 export const method = RPC.method((req: NextApiRequest) => req.method);
