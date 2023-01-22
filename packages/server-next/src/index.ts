@@ -5,6 +5,7 @@ import * as RPC from "@powerpc/server";
 import * as f from "fp-ts/function";
 import * as IO from "fp-ts/IO";
 
+export * from "./plugin";
 export * from "@powerpc/server";
 
 type HttpResponse = readonly [number, JsonValue];

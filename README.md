@@ -8,8 +8,11 @@
 
 ## Features
 - Type-Safe
+- Ergonomic
 - Framework Agnostic
 - Declarative
 
-## Examples
+## Integrations
 - Next.js
+- React
+- Webpack

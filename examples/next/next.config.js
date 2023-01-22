@@ -1,15 +1,4 @@
-module.exports = {
-  webpack: (config, options) => {
-    if (!options.isServer) {
-      config.module.rules.push({
-        test: /pages\/api\/.*/,
-        use: {
-          loader: "@powerpc/webpack-loader",
-          options: { apiUrl: (path) => `/api${path}` },
-        },
-      });
-    }
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { nextPlugin } = require("@powerpc/server-next");
 
-    return config;
-  },
-};
+module.exports = nextPlugin(/pages\/api\/.*/)({});
