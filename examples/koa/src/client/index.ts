@@ -11,6 +11,6 @@ rpc(welcomeMessage)({
   document.write(
     c._tag === "RemoteSuccess"
       ? `Success: ${JSON.stringify(c.value)}`
-      : `Failure ${JSON.stringify(c.error)}`
+      : `Failure: ${JSON.stringify(c.error)}`
   )
 );
