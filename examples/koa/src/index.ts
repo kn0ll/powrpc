@@ -4,6 +4,4 @@ import welcomeMessage from "./api/welcomeMessage";
 
 const app = new Koa();
 
-app.use(welcomeMessage);
-
-app.listen(3000);
+app.use(welcomeMessage).listen(3000);
