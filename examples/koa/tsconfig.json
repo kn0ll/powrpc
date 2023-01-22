@@ -5,6 +5,9 @@
     "module": "CommonJS",
     "composite": true
   },
+  "include": [
+    "src"
+  ],
   "references": [
     {
       "path": "../../packages/client"
