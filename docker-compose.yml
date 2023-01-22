@@ -10,5 +10,3 @@ services:
     working_dir: ${DEVCONTAINER_WORKDIR}
     tty: true
     user: node
-    volumes:
-      - ./:${DEVCONTAINER_WORKDIR}
