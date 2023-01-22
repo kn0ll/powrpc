@@ -1,0 +1,16 @@
+{
+  "name": "@powerpc/server-koa",
+  "version": "1.0.0",
+  "main": "./cjs/src/index.js",
+  "module": "./esm/src/index.js",
+  "types": "esm/src/index.d.ts",
+  "devDependencies": {
+    "@types/koa": "^2.13.5",
+    "koa": "^2.14.1",
+    "type-fest": "^3.5.2"
+  },
+  "dependencies": {
+    "@powerpc/server": "^1.0.0",
+    "fp-ts": "^2.13.1"
+  }
+}

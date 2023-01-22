@@ -14,5 +14,6 @@
 
 ## Integrations
 - Next.js
+- Koa
 - React
 - Webpack

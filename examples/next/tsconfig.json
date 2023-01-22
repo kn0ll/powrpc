@@ -31,9 +31,6 @@
       "path": "../../packages/client-react"
     },
     {
-      "path": "../../packages/server"
-    },
-    {
       "path": "../../packages/server-next"
     }
   ]

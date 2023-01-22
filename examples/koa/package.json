@@ -1,0 +1,18 @@
+{
+  "name": "@powerpc/examples-koa",
+  "private": true,
+  "version": "1.0.0",
+  "devDependencies": {
+    "@types/koa": "^2.13.5",
+    "@types/node": "18.11.9",
+    "type-fest": "^3.5.2"
+  },
+  "dependencies": {
+    "@devexperts/remote-data-ts": "^2.1.1",
+    "@powerpc/client": "^1.0.0",
+    "@powerpc/server-koa": "^1.0.0",
+    "fp-ts": "^2.13.1",
+    "io-ts": "^2.2.19",
+    "koa": "^2.14.1"
+  }
+}

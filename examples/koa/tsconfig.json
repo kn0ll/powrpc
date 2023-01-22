@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig",
+  "compilerOptions": {
+    "composite": true
+  },
+  "include": ["src"],
+  "references": [
+    {
+      "path": "../../packages/client"
+    },
+    {
+      "path": "../../packages/server-koa"
+    }
+  ]
+}
