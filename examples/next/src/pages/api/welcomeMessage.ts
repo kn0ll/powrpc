@@ -1,4 +1,4 @@
-import * as RPC from "@pow-rpc/server-next";
+import * as RPC from "@powerpc/server-next";
 import * as f from "fp-ts/function";
 import * as D from "io-ts/Decoder";
 

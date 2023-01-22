@@ -4,7 +4,7 @@ module.exports = {
       config.module.rules.push({
         test: /pages\/api\/.*/,
         use: {
-          loader: "@pow-rpc/webpack-loader",
+          loader: "@powerpc/webpack-loader",
           options: { apiUrl: (path) => `/api${path}` },
         },
       });

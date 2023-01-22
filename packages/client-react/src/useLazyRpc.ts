@@ -1,6 +1,6 @@
-import type { RpcHandler } from "@pow-rpc/server";
+import type { RpcHandler } from "@powerpc/server";
 
-import rpc from "@pow-rpc/client";
+import rpc from "@powerpc/client";
 import { useCallback } from "react";
 
 export const useLazyRpc = <M, E, A>(handler: RpcHandler<M, E, A>) =>

@@ -1,5 +1,5 @@
 import type { RemoteFailure, RemoteSuccess } from "@devexperts/remote-data-ts";
-import type { RpcHandler } from "@pow-rpc/server";
+import type { RpcHandler } from "@powerpc/server";
 
 const success = <S>(value: S) => ({ _tag: "RemoteSuccess", value } as const);
 

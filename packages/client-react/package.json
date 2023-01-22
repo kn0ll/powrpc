@@ -1,17 +1,17 @@
 {
-  "name": "@pow-rpc/client-react",
+  "name": "@powerpc/client-react",
   "version": "1.0.0",
   "main": "lib/src/index.js",
   "types": "lib/src/index.d.ts",
   "devDependencies": {
     "@devexperts/remote-data-ts": "^2.1.1",
-    "@pow-rpc/client": "^1.0.0",
-    "@pow-rpc/server": "^1.0.0",
+    "@powerpc/client": "^1.0.0",
+    "@powerpc/server": "^1.0.0",
     "@types/react": "^18.0.25",
     "react": "^18.2.0"
   },
   "peerDependencies": {
-    "@pow-rpc/client": "^1.0.0",
+    "@powerpc/client": "^1.0.0",
     "react": "^18.2.0"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@pow-rpc/server-next",
+  "name": "@powerpc/server-next",
   "version": "1.0.0",
   "main": "lib/src/index.js",
   "types": "lib/src/index.d.ts",
@@ -8,7 +8,7 @@
     "type-fest": "^3.5.2"
   },
   "dependencies": {
-    "@pow-rpc/server": "^1.0.0",
+    "@powerpc/server": "^1.0.0",
     "fp-ts": "^2.13.1"
   }
 }

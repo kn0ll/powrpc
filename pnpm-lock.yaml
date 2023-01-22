@@ -31,10 +31,10 @@ importers:
   examples/next:
     specifiers:
       '@devexperts/remote-data-ts': ^2.1.1
-      '@pow-rpc/client': ^1.0.0
-      '@pow-rpc/client-react': ^1.0.0
-      '@pow-rpc/server-next': ^1.0.0
-      '@pow-rpc/webpack-loader': ^1.0.0
+      '@powerpc/client': ^1.0.0
+      '@powerpc/client-react': ^1.0.0
+      '@powerpc/server-next': ^1.0.0
+      '@powerpc/webpack-loader': ^1.0.0
       '@types/node': 18.11.9
       '@types/react': ^18.0.25
       fp-ts: ^2.13.1
@@ -45,10 +45,10 @@ importers:
       react-dom: ^18.2.0
     dependencies:
       '@devexperts/remote-data-ts': 2.1.1_bcu4ou6ufkpns4noa4vjwloumi
-      '@pow-rpc/client': link:../../packages/client
-      '@pow-rpc/client-react': link:../../packages/client-react
-      '@pow-rpc/server-next': link:../../packages/server-next
-      '@pow-rpc/webpack-loader': link:../../packages/webpack-loader
+      '@powerpc/client': link:../../packages/client
+      '@powerpc/client-react': link:../../packages/client-react
+      '@powerpc/server-next': link:../../packages/server-next
+      '@powerpc/webpack-loader': link:../../packages/webpack-loader
       fp-ts: 2.13.1
       io-ts: 2.2.20_fp-ts@2.13.1
       io-ts-types: 0.5.19_fp-ts@2.13.1+io-ts@2.2.20
@@ -62,22 +62,22 @@ importers:
   packages/client:
     specifiers:
       '@devexperts/remote-data-ts': ^2.1.1
-      '@pow-rpc/server': ^1.0.0
+      '@powerpc/server': ^1.0.0
     devDependencies:
       '@devexperts/remote-data-ts': 2.1.1
-      '@pow-rpc/server': link:../server
+      '@powerpc/server': link:../server
 
   packages/client-react:
     specifiers:
       '@devexperts/remote-data-ts': ^2.1.1
-      '@pow-rpc/client': ^1.0.0
-      '@pow-rpc/server': ^1.0.0
+      '@powerpc/client': ^1.0.0
+      '@powerpc/server': ^1.0.0
       '@types/react': ^18.0.25
       react: ^18.2.0
     devDependencies:
       '@devexperts/remote-data-ts': 2.1.1
-      '@pow-rpc/client': link:../client
-      '@pow-rpc/server': link:../server
+      '@powerpc/client': link:../client
+      '@powerpc/server': link:../server
       '@types/react': 18.0.27
       react: 18.2.0
 
@@ -92,12 +92,12 @@ importers:
 
   packages/server-next:
     specifiers:
-      '@pow-rpc/server': ^1.0.0
+      '@powerpc/server': ^1.0.0
       fp-ts: ^2.13.1
       next: ^13.0.5
       type-fest: ^3.5.2
     dependencies:
-      '@pow-rpc/server': link:../server
+      '@powerpc/server': link:../server
       fp-ts: 2.13.1
     devDependencies:
       next: 13.1.4

@@ -1,5 +1,5 @@
 {
-  "name": "@pow-rpc/webpack-loader",
+  "name": "@powerpc/webpack-loader",
   "version": "1.0.0",
   "main": "lib/src/index.js",
   "types": "lib/src/index.d.ts",
