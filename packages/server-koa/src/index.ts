@@ -8,7 +8,11 @@ export * from "@powerpc/server";
 
 type HttpResponse = readonly [number, JsonValue];
 
-type Ctx = Koa.ParameterizedContext<Koa.DefaultState, Koa.DefaultContext, any>;
+type Ctx = Koa.ParameterizedContext<
+  Koa.DefaultState,
+  Koa.DefaultContext,
+  unknown
+>;
 
 const koaResponseIO =
   <C extends Ctx>(ctx: C) =>
