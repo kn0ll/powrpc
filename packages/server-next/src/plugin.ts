@@ -5,7 +5,7 @@ export const nextPlugin = (nextConfig: any) =>
         config.module.rules.push({
           test: /pages\/api\/.*/,
           use: {
-            loader: "@powerpc/webpack-loader",
+            loader: "@powrpc/webpack-loader",
             options: { apiUrl: (path: string) => `/api${path}` },
           },
         });

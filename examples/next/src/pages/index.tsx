@@ -1,4 +1,4 @@
-import { useRpc } from "@powerpc/client-react";
+import { useRpc } from "@powrpc/client-react";
 import { useMemo } from "react";
 
 import welcomeMessage from "./api/welcomeMessage";
@@ -29,7 +29,7 @@ export default () => {
 };
 
 // import { fold3 } from "@devexperts/remote-data-ts";
-// import rpc from "@powerpc/server/lib/src/rpc";
+// import rpc from "@powrpc/server/lib/src/rpc";
 // import * as f from "fp-ts/function";
 
 // import test from "./api/test1";

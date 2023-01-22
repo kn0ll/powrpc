@@ -1,5 +1,5 @@
 {
-  "name": "@powerpc/client",
+  "name": "@powrpc/client",
   "version": "1.0.0",
   "main": "./cjs/src/index.js",
   "module": "./esm/src/index.js",
@@ -9,6 +9,6 @@
   },
   "devDependencies": {
     "@devexperts/remote-data-ts": "^2.1.1",
-    "@powerpc/server": "^1.0.0"
+    "@powrpc/server": "^1.0.0"
   }
 }

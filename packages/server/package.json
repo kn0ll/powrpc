@@ -1,5 +1,5 @@
 {
-  "name": "@powerpc/server",
+  "name": "@powrpc/server",
   "version": "1.0.0",
   "main": "./cjs/src/index.js",
   "module": "./esm/src/index.js",

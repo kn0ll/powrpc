@@ -1,5 +1,5 @@
 {
-  "name": "@powerpc/server-koa",
+  "name": "@powrpc/server-koa",
   "version": "1.0.0",
   "main": "./cjs/src/index.js",
   "module": "./esm/src/index.js",
@@ -13,7 +13,7 @@
     "type-fest": "^3.5.2"
   },
   "dependencies": {
-    "@powerpc/server": "^1.0.0",
+    "@powrpc/server": "^1.0.0",
     "fp-ts": "^2.13.1"
   }
 }

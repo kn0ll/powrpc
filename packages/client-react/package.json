@@ -1,5 +1,5 @@
 {
-  "name": "@powerpc/client-react",
+  "name": "@powrpc/client-react",
   "version": "1.0.0",
   "main": "./cjs/src/index.js",
   "module": "./esm/src/index.js",
@@ -9,13 +9,13 @@
   },
   "devDependencies": {
     "@devexperts/remote-data-ts": "^2.1.1",
-    "@powerpc/client": "^1.0.0",
-    "@powerpc/server": "^1.0.0",
+    "@powrpc/client": "^1.0.0",
+    "@powrpc/server": "^1.0.0",
     "@types/react": "^18.0.25",
     "react": "^18.2.0"
   },
   "peerDependencies": {
-    "@powerpc/client": "^1.0.0",
+    "@powrpc/client": "^1.0.0",
     "react": "^18.2.0"
   }
 }

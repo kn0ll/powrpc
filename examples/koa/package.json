@@ -1,5 +1,5 @@
 {
-  "name": "@powerpc/examples-koa",
+  "name": "@powrpc/examples-koa",
   "private": true,
   "version": "1.0.0",
   "scripts": {
@@ -8,7 +8,7 @@
     "clean": "rm -rf cjs"
   },
   "devDependencies": {
-    "@powerpc/webpack-loader": "^1.0.0",
+    "@powrpc/webpack-loader": "^1.0.0",
     "@types/koa": "^2.13.5",
     "@types/koa-static": "^4.0.2",
     "@types/koa__router": "^12.0.0",
@@ -23,8 +23,8 @@
   "dependencies": {
     "@devexperts/remote-data-ts": "^2.1.1",
     "@koa/router": "^12.0.0",
-    "@powerpc/client": "^1.0.0",
-    "@powerpc/server-koa": "^1.0.0",
+    "@powrpc/client": "^1.0.0",
+    "@powrpc/server-koa": "^1.0.0",
     "fp-ts": "^2.13.1",
     "io-ts": "^2.2.19",
     "koa": "^2.14.1",

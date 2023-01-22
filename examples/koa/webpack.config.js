@@ -18,7 +18,7 @@ module.exports = {
       {
         test: /\/api\/.*/,
         use: {
-          loader: "@powerpc/webpack-loader",
+          loader: "@powrpc/webpack-loader",
           options: { apiUrl: (path) => path },
         },
       },

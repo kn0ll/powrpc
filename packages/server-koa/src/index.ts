@@ -1,10 +1,10 @@
 import type { JsonValue } from "type-fest";
 
-import * as RPC from "@powerpc/server";
+import * as RPC from "@powrpc/server";
 import * as f from "fp-ts/function";
 import * as Koa from "koa";
 
-export * from "@powerpc/server";
+export * from "@powrpc/server";
 
 type HttpResponse = readonly [number, JsonValue];
 

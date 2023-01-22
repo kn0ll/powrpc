@@ -30,9 +30,9 @@ importers:
     specifiers:
       '@devexperts/remote-data-ts': ^2.1.1
       '@koa/router': ^12.0.0
-      '@powerpc/client': ^1.0.0
-      '@powerpc/server-koa': ^1.0.0
-      '@powerpc/webpack-loader': ^1.0.0
+      '@powrpc/client': ^1.0.0
+      '@powrpc/server-koa': ^1.0.0
+      '@powrpc/webpack-loader': ^1.0.0
       '@types/koa': ^2.13.5
       '@types/koa-static': ^4.0.2
       '@types/koa__router': ^12.0.0
@@ -50,14 +50,14 @@ importers:
     dependencies:
       '@devexperts/remote-data-ts': 2.1.1_fp-ts@2.13.1+io-ts@2.2.20
       '@koa/router': 12.0.0
-      '@powerpc/client': link:../../packages/client
-      '@powerpc/server-koa': link:../../packages/server-koa
+      '@powrpc/client': link:../../packages/client
+      '@powrpc/server-koa': link:../../packages/server-koa
       fp-ts: 2.13.1
       io-ts: 2.2.20_fp-ts@2.13.1
       koa: 2.14.1
       koa-static: 5.0.0
     devDependencies:
-      '@powerpc/webpack-loader': link:../../packages/webpack-loader
+      '@powrpc/webpack-loader': link:../../packages/webpack-loader
       '@types/koa': 2.13.5
       '@types/koa-static': 4.0.2
       '@types/koa__router': 12.0.0
@@ -72,10 +72,10 @@ importers:
   examples/next:
     specifiers:
       '@devexperts/remote-data-ts': ^2.1.1
-      '@powerpc/client': ^1.0.0
-      '@powerpc/client-react': ^1.0.0
-      '@powerpc/server-next': ^1.0.0
-      '@powerpc/webpack-loader': ^1.0.0
+      '@powrpc/client': ^1.0.0
+      '@powrpc/client-react': ^1.0.0
+      '@powrpc/server-next': ^1.0.0
+      '@powrpc/webpack-loader': ^1.0.0
       '@types/node': 18.11.9
       '@types/react': ^18.0.25
       fp-ts: ^2.13.1
@@ -86,10 +86,10 @@ importers:
       react-dom: ^18.2.0
     dependencies:
       '@devexperts/remote-data-ts': 2.1.1_bcu4ou6ufkpns4noa4vjwloumi
-      '@powerpc/client': link:../../packages/client
-      '@powerpc/client-react': link:../../packages/client-react
-      '@powerpc/server-next': link:../../packages/server-next
-      '@powerpc/webpack-loader': link:../../packages/webpack-loader
+      '@powrpc/client': link:../../packages/client
+      '@powrpc/client-react': link:../../packages/client-react
+      '@powrpc/server-next': link:../../packages/server-next
+      '@powrpc/webpack-loader': link:../../packages/webpack-loader
       fp-ts: 2.13.1
       io-ts: 2.2.20_fp-ts@2.13.1
       io-ts-types: 0.5.19_fp-ts@2.13.1+io-ts@2.2.20
@@ -103,22 +103,22 @@ importers:
   packages/client:
     specifiers:
       '@devexperts/remote-data-ts': ^2.1.1
-      '@powerpc/server': ^1.0.0
+      '@powrpc/server': ^1.0.0
     devDependencies:
       '@devexperts/remote-data-ts': 2.1.1
-      '@powerpc/server': link:../server
+      '@powrpc/server': link:../server
 
   packages/client-react:
     specifiers:
       '@devexperts/remote-data-ts': ^2.1.1
-      '@powerpc/client': ^1.0.0
-      '@powerpc/server': ^1.0.0
+      '@powrpc/client': ^1.0.0
+      '@powrpc/server': ^1.0.0
       '@types/react': ^18.0.25
       react: ^18.2.0
     devDependencies:
       '@devexperts/remote-data-ts': 2.1.1
-      '@powerpc/client': link:../client
-      '@powerpc/server': link:../server
+      '@powrpc/client': link:../client
+      '@powrpc/server': link:../server
       '@types/react': 18.0.27
       react: 18.2.0
 
@@ -133,13 +133,13 @@ importers:
 
   packages/server-koa:
     specifiers:
-      '@powerpc/server': ^1.0.0
+      '@powrpc/server': ^1.0.0
       '@types/koa': ^2.13.5
       fp-ts: ^2.13.1
       koa: ^2.14.1
       type-fest: ^3.5.2
     dependencies:
-      '@powerpc/server': link:../server
+      '@powrpc/server': link:../server
       fp-ts: 2.13.1
     devDependencies:
       '@types/koa': 2.13.5
@@ -148,12 +148,12 @@ importers:
 
   packages/server-next:
     specifiers:
-      '@powerpc/server': ^1.0.0
+      '@powrpc/server': ^1.0.0
       fp-ts: ^2.13.1
       next: ^13.1.4
       type-fest: ^3.5.2
     dependencies:
-      '@powerpc/server': link:../server
+      '@powrpc/server': link:../server
       fp-ts: 2.13.1
     devDependencies:
       next: 13.1.4

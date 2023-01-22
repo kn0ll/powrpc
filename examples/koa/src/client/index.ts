@@ -1,4 +1,4 @@
-import rpc from "@powerpc/client";
+import rpc from "@powrpc/client";
 
 import welcomeMessage from "../api/welcomeMessage";
 

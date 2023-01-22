@@ -1,4 +1,4 @@
-import * as RPC from "@powerpc/server-koa";
+import * as RPC from "@powrpc/server-koa";
 import * as f from "fp-ts/function";
 import * as D from "io-ts/Decoder";
 
