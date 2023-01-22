@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "build": "tsc -b tsconfig.esm.json tsconfig.cjs.json && pnpm -C examples/koa build",
+    "build": "tsc -b tsconfig.esm.json tsconfig.cjs.json",
     "dev": "tsc -b tsconfig.esm.json tsconfig.cjs.json --watch",
     "lint": "eslint examples packages"
   },
