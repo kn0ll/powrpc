@@ -1,0 +1,12 @@
+{
+  "name": "@pow-rpc/server",
+  "version": "1.0.0",
+  "main": "lib/src/index.js",
+  "types": "lib/src/index.d.ts",
+  "devDependencies": {
+    "io-ts": "^2.2.19"
+  },
+  "dependencies": {
+    "fp-ts": "^2.13.1"
+  }
+}

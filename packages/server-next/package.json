@@ -1,0 +1,14 @@
+{
+  "name": "@pow-rpc/server-next",
+  "version": "1.0.0",
+  "main": "lib/src/index.js",
+  "types": "lib/src/index.d.ts",
+  "devDependencies": {
+    "next": "^13.0.5",
+    "type-fest": "^3.5.2"
+  },
+  "dependencies": {
+    "@pow-rpc/server": "^1.0.0",
+    "fp-ts": "^2.13.1"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "@pow-rpc/client",
+  "version": "1.0.0",
+  "main": "lib/src/index.js",
+  "types": "lib/src/index.d.ts",
+  "devDependencies": {
+    "@devexperts/remote-data-ts": "^2.1.1",
+    "@pow-rpc/server": "^1.0.0"
+  }
+}

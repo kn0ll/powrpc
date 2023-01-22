@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: ./.devcontainer/Dockerfile
+      args:
+        workdir: ${DEVCONTAINER_WORKDIR}
+    working_dir: ${DEVCONTAINER_WORKDIR}
+    tty: true
+    user: node
+    volumes:
+      - ./:${DEVCONTAINER_WORKDIR}

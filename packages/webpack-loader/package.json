@@ -1,0 +1,10 @@
+{
+  "name": "@pow-rpc/webpack-loader",
+  "version": "1.0.0",
+  "main": "lib/src/index.js",
+  "types": "lib/src/index.d.ts",
+  "devDependencies": {
+    "@types/node": "18.11.9",
+    "webpack": "^5.75.0"
+  }
+}

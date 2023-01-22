@@ -1,0 +1,11 @@
+{
+  "name": "Dev",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "dev",
+  "workspaceFolder": "/opt/dev",
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "GitHub.copilot"
+  ]
+}
