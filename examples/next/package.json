@@ -3,7 +3,8 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "dev": "next dev"
+    "dev": "next dev",
+    "clean": "rm -rf .next"
   },
   "devDependencies": {
     "@types/node": "18.11.9",

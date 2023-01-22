@@ -4,6 +4,9 @@
   "main": "./cjs/src/index.js",
   "module": "./esm/src/index.js",
   "types": "esm/src/index.d.ts",
+  "scripts": {
+    "clean": "rm -rf esm cjs"
+  },
   "devDependencies": {
     "next": "^13.1.4",
     "type-fest": "^3.5.2"

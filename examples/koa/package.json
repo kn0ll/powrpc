@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "ts-node src/server",
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "clean": "rm -rf cjs"
   },
   "devDependencies": {
     "@powerpc/webpack-loader": "^1.0.0",
