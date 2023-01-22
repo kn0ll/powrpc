@@ -6,7 +6,7 @@ const loader: LoaderDefinitionFunction<{
   const parts = this.resourcePath.split(this.context)[1]!.split(".");
   return `export default "${this.getOptions().apiUrl(
     parts.slice(0, parts.length - 1).join("/")
-  )}";`;
+  )}" as any;`;
 };
 
 module.exports = loader;

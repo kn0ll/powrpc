@@ -6,7 +6,7 @@ console.log("hello world");
 
 document.write("loading...");
 
-rpc(welcomeMessage as any)({
+rpc(welcomeMessage)({
   method: "GET",
   query: { name: "foobar" },
 }).then((c) =>
