@@ -1,11 +1,7 @@
 {
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "strict": true,
-    "noUncheckedIndexedAccess": true,
-    "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true,
-    "module": "ESNext",
-    "moduleResolution": "node"
+    "module": "ESNext"
   },
   "files": [],
   "references": [
