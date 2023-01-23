@@ -1,0 +1,17 @@
+{
+  "name": "@powrpc/server-koa",
+  "version": "1.0.0",
+  "main": "./cjs/src/index.js",
+  "module": "./esm/src/index.js",
+  "types": "esm/src/index.d.ts",
+  "scripts": {
+    "clean": "rm -rf esm cjs"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.13.5",
+    "koa": "^2.14.1"
+  },
+  "dependencies": {
+    "@powrpc/server": "^1.0.0"
+  }
+}

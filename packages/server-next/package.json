@@ -1,0 +1,16 @@
+{
+  "name": "@powrpc/server-next",
+  "version": "1.0.0",
+  "main": "./cjs/src/index.js",
+  "module": "./esm/src/index.js",
+  "types": "esm/src/index.d.ts",
+  "scripts": {
+    "clean": "rm -rf esm cjs"
+  },
+  "devDependencies": {
+    "next": "^13.1.4"
+  },
+  "dependencies": {
+    "@powrpc/server": "^1.0.0"
+  }
+}

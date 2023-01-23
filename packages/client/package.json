@@ -1,0 +1,14 @@
+{
+  "name": "@powrpc/client",
+  "version": "1.0.0",
+  "main": "./cjs/src/index.js",
+  "module": "./esm/src/index.js",
+  "types": "esm/src/index.d.ts",
+  "scripts": {
+    "clean": "rm -rf esm cjs"
+  },
+  "devDependencies": {
+    "@devexperts/remote-data-ts": "^2.1.1",
+    "@powrpc/server": "^1.0.0"
+  }
+}

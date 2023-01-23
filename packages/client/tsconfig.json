@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig",
+  "compilerOptions": {
+    "outDir": "esm",
+    "module": "ESNext",
+    "composite": true
+  },
+  "references": [
+    { "path": "../server" },
+  ],
+  "include": ["src"]
+}

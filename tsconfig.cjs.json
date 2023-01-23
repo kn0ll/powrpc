@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "CommonJS"
+  },
+  "files": [],
+  "references": [
+    { "path": "packages/client/tsconfig.cjs.json" },
+    { "path": "packages/client-react/tsconfig.cjs.json" },
+    { "path": "packages/server/tsconfig.cjs.json" },
+    { "path": "packages/server-express/tsconfig.cjs.json" },
+    { "path": "packages/server-koa/tsconfig.cjs.json" },
+    { "path": "packages/server-next/tsconfig.cjs.json" },
+    { "path": "packages/webpack-loader/tsconfig.cjs.json" }
+  ],
+}

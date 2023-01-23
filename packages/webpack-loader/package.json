@@ -1,0 +1,14 @@
+{
+  "name": "@powrpc/webpack-loader",
+  "version": "1.0.0",
+  "main": "./cjs/src/index.js",
+  "module": "./esm/src/index.js",
+  "types": "esm/src/index.d.ts",
+  "scripts": {
+    "clean": "rm -rf esm cjs"
+  },
+  "devDependencies": {
+    "@types/node": "18.11.9",
+    "webpack": "^5.75.0"
+  }
+}

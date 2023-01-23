@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig",
+  "compilerOptions": {
+    "outDir": "cjs",
+    "module": "CommonJS"
+  },
+  "references": [
+    { "path": "../client/tsconfig.cjs.json" },
+    { "path": "../server/tsconfig.cjs.json" },
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "@powrpc/examples-next",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next dev",
+    "clean": "rm -rf .next"
+  },
+  "devDependencies": {
+    "@types/node": "18.11.9",
+    "@types/react": "^18.0.25"
+  },
+  "dependencies": {
+    "@powrpc/client-react": "^1.0.0",
+    "@powrpc/server-next": "^1.0.0",
+    "@powrpc/webpack-loader": "^1.0.0",
+    "fp-ts": "^2.13.1",
+    "io-ts": "^2.2.19",
+    "next": "^13.1.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

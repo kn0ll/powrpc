@@ -1,0 +1,16 @@
+{
+  "name": "@powrpc/server",
+  "version": "1.0.0",
+  "main": "./cjs/src/index.js",
+  "module": "./esm/src/index.js",
+  "types": "esm/src/index.d.ts",
+  "scripts": {
+    "clean": "rm -rf esm cjs"
+  },
+  "devDependencies": {
+    "io-ts": "^2.2.19"
+  },
+  "dependencies": {
+    "fp-ts": "^2.13.1"
+  }
+}
