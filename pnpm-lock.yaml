@@ -194,9 +194,11 @@ importers:
   packages/server-next:
     specifiers:
       '@powrpc/server': ^0.0.1-alpha.2
+      '@powrpc/webpack-loader': ^0.0.1-alpha.2
       next: ^13.1.4
     dependencies:
       '@powrpc/server': link:../server
+      '@powrpc/webpack-loader': link:../webpack-loader
     devDependencies:
       next: 13.1.5
 
