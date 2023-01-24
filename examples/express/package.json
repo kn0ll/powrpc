@@ -1,14 +1,14 @@
 {
   "name": "@powrpc/examples-express",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.0.1-alpha.2",
   "scripts": {
     "dev": "ts-node src/server",
     "build": "webpack --config webpack.config.js",
     "clean": "rm -rf cjs"
   },
   "devDependencies": {
-    "@powrpc/webpack-loader": "^1.0.0",
+    "@powrpc/webpack-loader": "^0.0.1-alpha.2",
     "@types/express": "^4.17.15",
     "@types/node": "18.11.9",
     "@types/qs": "^6.9.7",
@@ -22,8 +22,8 @@
   },
   "dependencies": {
     "@devexperts/remote-data-ts": "^2.1.1",
-    "@powrpc/client": "^1.0.0",
-    "@powrpc/server-express": "^1.0.0",
+    "@powrpc/client": "^0.0.1-alpha.2",
+    "@powrpc/server-express": "^0.0.1-alpha.2",
     "express": "^4.18.2",
     "fp-ts": "^2.13.1",
     "io-ts": "^2.2.19"

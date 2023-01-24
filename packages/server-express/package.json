@@ -1,6 +1,6 @@
 {
   "name": "@powrpc/server-express",
-  "version": "1.0.0",
+  "version": "0.0.1-alpha.2",
   "main": "./cjs/src/index.js",
   "module": "./esm/src/index.js",
   "types": "esm/src/index.d.ts",
@@ -14,6 +14,6 @@
     "qs": "^6.11.0"
   },
   "dependencies": {
-    "@powrpc/server": "^1.0.0"
+    "@powrpc/server": "^0.0.1-alpha.2"
   }
 }

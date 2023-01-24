@@ -6,6 +6,10 @@
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=master&repo=591863760)
 
+## Work In Progress
+
+If you happen to come across this project, I have only opened it for feedback and published it for testing. Sans experimentation I would advise against installing this.
+
 ## Features
 - **Type-Safe**: A smart client ensures you are sending the correct parameters to invoke a remote function.
 - **Ergonomic**: Transpile-time reconciliation means there is no development-time tooling or file watching.
