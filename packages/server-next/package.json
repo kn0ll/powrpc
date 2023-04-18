@@ -1,6 +1,6 @@
 {
   "name": "@powrpc/server-next",
-  "version": "0.0.1-alpha.2",
+  "version": "0.0.1-alpha.3",
   "main": "./cjs/src/index.js",
   "module": "./esm/src/index.js",
   "types": "esm/src/index.d.ts",
@@ -11,7 +11,7 @@
     "next": "^13.1.4"
   },
   "dependencies": {
-    "@powrpc/webpack-loader": "^0.0.1-alpha.2",
-    "@powrpc/server": "^0.0.1-alpha.2"
+    "@powrpc/webpack-loader": "^0.0.1-alpha.3",
+    "@powrpc/server": "^0.0.1-alpha.3"
   }
 }

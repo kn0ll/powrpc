@@ -1,6 +1,6 @@
 # powrpc
 
-**powrpc** is a tool for building type-safe RPC functions using [TypeScript](https://www.typescriptlang.org/) and [fp-ts](https://gcanti.github.io/fp-ts/).
+**powrpc** is a tool for building strongly-typed HTTP servers and clients using [TypeScript](https://www.typescriptlang.org/) and [Effect](https://github.com/Effect-TS).
 
 [![Workflow Status](https://github.com/kn0ll/powrpc/actions/workflows/test.yml/badge.svg)](https://github.com/kn0ll/powrpc/actions) [![Gzip Size](https://img.badgesize.io/kn0ll/powrpc/master/packages/client/src/index.ts.svg?compression=gzip)](https://github.com/kn0ll/powrpc/blob/master/packages/client/src/index.ts)
 
@@ -11,10 +11,11 @@
 If you happen to come across this project, I have only opened it for feedback and published it for testing. Sans experimentation I would advise against installing this.
 
 ## Features
-- **Type-Safe**: A smart client ensures you are sending the correct parameters to invoke a remote function.
-- **Ergonomic**: Transpile-time reconciliation means there is no development-time tooling or file watching.
+- **Type-Safe**: A smart client provides strong typing for your APIs.
+- **Ergonomic**: Transpile-time reconciliation means there is no development-time tooling, code generation, or file watching.
 - **Framework Agnostic**: Batteries included, but handlers can be created for any TypeScript HTTP server.
 - **Declarative**: Default handlers are declarative, making it simple to test your APIS and reason about them.
+- **Portable**: The same APIs can be served by Express, Next.js, or more.
 
 ## Integrations
 - Next.js

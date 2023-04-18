@@ -1,6 +1,6 @@
 {
   "name": "@powrpc/client",
-  "version": "0.0.1-alpha.2",
+  "version": "0.0.1-alpha.3",
   "main": "./cjs/src/index.js",
   "module": "./esm/src/index.js",
   "types": "esm/src/index.d.ts",
@@ -9,6 +9,6 @@
   },
   "devDependencies": {
     "@devexperts/remote-data-ts": "^2.1.1",
-    "@powrpc/server": "^0.0.1-alpha.2"
+    "@powrpc/server": "^0.0.1-alpha.3"
   }
 }

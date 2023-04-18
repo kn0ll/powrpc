@@ -1,5 +1,5 @@
 import type { RemoteData } from "@devexperts/remote-data-ts";
-import type { RpcHandler } from "@powrpc/server";
+import type { Handler } from "@powrpc/server";
 
 import { useEffect, useState } from "react";
 
@@ -12,7 +12,7 @@ export const useRpc = <
   A,
   ARG extends unknown[]
 >(
-  handler: RpcHandler<M, E, A, ARG>,
+  handler: Handler<M, E, A, ARG>,
   init: M
 ) => {
   const [result, setResult] = useState<RemoteData<E | [number, string], A>>({

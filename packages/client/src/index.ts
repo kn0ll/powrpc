@@ -1,5 +1,5 @@
 import type { RemoteFailure, RemoteSuccess } from "@devexperts/remote-data-ts";
-import type { RpcHandler } from "@powrpc/server";
+import type { Handler } from "@powrpc/server";
 
 const success = <S>(value: S) => ({ _tag: "RemoteSuccess", value } as const);
 
@@ -13,7 +13,7 @@ const rpc =
     A,
     ARG extends unknown[]
   >(
-    fn: RpcHandler<M, E, A, ARG>
+    fn: Handler<M, E, A, ARG>
   ) =>
   (init: M): Promise<RemoteFailure<E | [number, string]> | RemoteSuccess<A>> =>
     fetch(
