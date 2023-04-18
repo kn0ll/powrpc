@@ -1,7 +1,7 @@
 {
   "name": "@powrpc/dev",
   "private": true,
-  "version": "0.0.1-alpha.2",
+  "version": "0.0.1-alpha.3",
   "scripts": {
     "build": "tsc -b tsconfig.esm.json tsconfig.cjs.json && pnpm -C examples/koa build && pnpm -C examples/express build",
     "dev": "tsc -b tsconfig.esm.json tsconfig.cjs.json --watch",

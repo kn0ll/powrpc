@@ -1,11 +1,14 @@
+import { flow } from "@effect/data/Function";
+import * as Effect from "@effect/io/Effect";
+import * as Schema from "@effect/schema/Schema";
 import * as RPC from "@powrpc/server-koa";
-import * as f from "fp-ts/function";
-import * as D from "io-ts/Decoder";
 
-const handle = f.flow(
+const handle = flow(
   RPC.method("GET"),
-  RPC.query(D.struct({ name: D.string })),
-  RPC.chain(({ query }) => RPC.of([200, `hello ${query.name}`] as const))
+  RPC.query(Schema.parseEither(Schema.struct({ name: Schema.string }))),
+  Effect.map(
+    ({ query }) => ({ status: 200, body: `Hello ${query.name}` } as const)
+  )
 );
 
 export default RPC.handler(handle);

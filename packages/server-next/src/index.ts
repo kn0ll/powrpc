@@ -6,13 +6,12 @@ export * from "./plugin";
 export * from "@powrpc/server";
 
 export const handler = RPC.handler(
-  ([req]: [req: NextApiRequest, res: NextApiResponse<unknown>]) => req,
-  ([req, res]) =>
-    ([status, response]) =>
-    () =>
-      res.status(status).json(response)
+  (req: NextApiRequest, res: NextApiResponse) =>
+    ({
+      method: req.method,
+      query: req.query,
+      body: req.body,
+      text: ({ status, body }) => res.status(status).send(body),
+      json: ({ status, body }) => res.status(status).json(body),
+    } as const)
 );
-
-export const method = RPC.method((req: NextApiRequest) => req.method);
-
-export const query = RPC.query((req: NextApiRequest) => req.query);

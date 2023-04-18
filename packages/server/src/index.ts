@@ -1,139 +1,134 @@
-import type { Decoder } from "io-ts/Decoder";
+import * as C from "@effect/data/Context";
+import * as Either from "@effect/data/Either";
+import { pipe } from "@effect/data/Function";
+import * as Effect from "@effect/io/Effect";
 
-import * as E from "fp-ts/Either";
-import * as f from "fp-ts/function";
-import * as IO from "fp-ts/IO";
-import * as IOE from "fp-ts/IOEither";
-import * as T from "fp-ts/Task";
-import * as TE from "fp-ts/TaskEither";
-import * as TO from "fp-ts/TaskOption";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export type RPC<M, E, A> = TE.TaskEither<E, A>;
+type Res = {
+  status: number;
+  body?: string;
+  headers?: [string, string][];
+};
 
-export const left: <M, E = never, A = never>(e: E) => RPC<M, E, A> = TE.left;
+export type Context<Meta> = {
+  method?: string;
+  query?: unknown;
+  body?: unknown;
+  text: (res: Res) => void;
+  json: (res: Res) => void;
+};
 
-export const right: <M, E, A = never>(a: A) => RPC<M, E, A> = TE.right;
+const context = <Meta>() => C.Tag<Context<Meta>>("XXX");
 
-export const rightTask: <M, E = never, A = never>(
-  ma: T.Task<A>
-) => RPC<M, E, A> = TE.rightTask;
+export type Handler<Meta, E, A, Args extends unknown[]> = (
+  ...args: Args
+) => Promise<Either.Either<E, A>>;
 
-export const leftTask: <M, E, A = never>(me: T.Task<E>) => RPC<M, E, A> =
-  TE.leftTask;
+export type Method = "GET" | "POST" | "DELETE";
 
-export const rightIO: <M, E = never, A = never>(ma: IO.IO<A>) => RPC<M, E, A> =
-  TE.rightIO;
-
-export const leftIO: <M, E = never, A = never>(me: IO.IO<E>) => RPC<M, E, A> =
-  TE.leftIO;
-
-export const fromIO: <M, A, E = never>(fa: IO.IO<A>) => RPC<M, E, A> =
-  TE.fromIO;
-
-export const fromTask: <M, A, E = never>(fa: T.Task<A>) => RPC<M, E, A> =
-  TE.fromTask;
-
-export const fromEither: <M, E, A>(fa: E.Either<E, A>) => RPC<M, E, A> =
-  TE.fromEither;
-
-export const fromIOEither: <M, E, A>(fa: IOE.IOEither<E, A>) => RPC<M, E, A> =
-  TE.fromIOEither;
-
-export const fromTaskOption: <M, E>(
-  onNone: f.Lazy<E>
-) => <A>(fa: TO.TaskOption<A>) => RPC<M, E, A> = TE.fromTaskOption;
-
-export const chain: <MA, MB, E, A, B>(
-  f: (a: A) => RPC<MB, E, B>
-) => (ma: RPC<MA, E, A>) => RPC<MA & MB, E, B> = TE.chain;
-
-export const chainIOK: <A, B>(
-  f: (a: A) => IO.IO<B>
-) => <M, E>(first: RPC<M, E, A>) => RPC<M, E, B> = TE.chainIOK;
-
-export const chainFirstIOK: <A, B>(
-  f: (a: A) => IO.IO<B>
-) => <M, E>(first: RPC<M, E, A>) => RPC<M, E, A> = TE.chainFirstIOK;
-
-export const orElseFirst: <M, E, B>(
-  onLeft: (e: E) => RPC<M, E, B>
-) => <A>(ma: RPC<M, E, A>) => RPC<M, E, A> = TE.orElseFirst;
-
-export const orElseFirstIOK: <E, B>(
-  onLeft: (e: E) => IO.IO<B>
-) => <M, A>(ma: RPC<M, E, A>) => RPC<M, E, A> = TE.orElseFirstIOK;
-
-export const of: <M, E = never, A = never>(a: A) => RPC<M, E, A> = right;
-
-export const Do: RPC<unknown, unknown, unknown> = of({});
-
-export type RpcHandler<M, E, A, ARG extends unknown[]> = (
-  ...args: ARG
-) => Promise<E.Either<E, A>>;
-
-export type Method = "GET" | "POST";
-
-const methodNotAllowed = [405, "Method not allowed."] as const;
+const methodNotAllowed = {
+  status: 405,
+  body: "Method not allowed.",
+} as const;
 
 export const method =
-  <A>(fm: (args: A) => string | undefined) =>
   <MT extends Method>(mt: MT) =>
-  <M, E>(rpc: RPC<M, E, A>) =>
-    f.pipe(
-      rpc,
-      chain((args) =>
-        fromEither<{ method: MT }, E | typeof methodNotAllowed, typeof args>(
-          f.pipe(
-            args,
-            E.fromPredicate(
-              (args) => fm(args) === mt,
-              () => methodNotAllowed
+  <Meta, E, A>(
+    self: Effect.Effect<Context<Meta>, E, A>
+  ): Effect.Effect<
+    Context<Meta & { method: MT }>,
+    E | typeof methodNotAllowed,
+    A
+  > =>
+    pipe(
+      self,
+      Effect.flatMap((a) =>
+        pipe(
+          context<Meta>(),
+          Effect.map(({ method }) =>
+            pipe(
+              method,
+              Either.liftPredicate(
+                () => method === mt,
+                () => methodNotAllowed
+              ),
+              Either.map(() => a)
             )
           )
         )
-      )
+      ),
+      Effect.flatMap(Effect.fromEither)
     );
 
-const cannotDecodeQuery = [400, "Cannot decode query."] as const;
+const unprocessableContent = {
+  status: 422,
+  body: "Could not parse query.",
+} as const;
 
 export const query =
-  <A, DI>(fdi: (args: A) => DI) =>
-  <DA>(decoder: Decoder<DI, DA>) =>
-  <M, E>(rpc: RPC<M, E, A>) =>
-    f.pipe(
-      rpc,
-      chain((args) =>
-        fromEither<
-          { query: DA },
-          E | typeof cannotDecodeQuery,
-          typeof args & { query: DA }
-        >(
-          f.pipe(args, (args) =>
-            f.pipe(
-              decoder.decode(fdi(args)),
-              E.chain((query) => E.right({ ...args, query })),
-              E.orElseW(() => E.left(cannotDecodeQuery))
+  <EE, EA>(parseEither: (i: unknown) => Either.Either<EE, EA>) =>
+  <Meta, E, A>(
+    self: Effect.Effect<Context<Meta>, E, A>
+  ): Effect.Effect<
+    Context<Meta & { query: EA }>,
+    E | typeof unprocessableContent,
+    A & { query: EA }
+  > =>
+    pipe(
+      self,
+      Effect.flatMap((a) =>
+        pipe(
+          context<Meta>(),
+          Effect.map(({ query }) =>
+            pipe(
+              parseEither(query),
+              Either.map((x) => ({ ...a, query: x })),
+              Either.mapLeft(() => unprocessableContent)
             )
           )
         )
-      )
+      ),
+      Effect.flatMap(Effect.fromEither)
     );
 
-export type HttpResponse<B> = readonly [number, B];
+const respond =
+  (
+    r: <Meta, R extends Res>({
+      status,
+      body,
+    }: R) => Effect.Effect<Context<Meta>, never, void>
+  ) =>
+  <Meta, R extends Context<Meta>, E extends Res, A extends Res>(
+    self: Effect.Effect<R, E, A>
+  ) =>
+    pipe(self, Effect.tapBoth(r, r));
+
+export const text = respond(<Meta, R extends Res>({ status, body }: R) =>
+  pipe(
+    context<Meta>(),
+    Effect.flatMap(({ text }) => Effect.sync(() => text({ status, body })))
+  )
+);
+
+export const json = respond(<Meta, R extends Res>({ status, body }: R) =>
+  pipe(
+    context<Meta>(),
+    Effect.flatMap(({ json }) => Effect.sync(() => json({ status, body })))
+  )
+);
 
 export const handler =
-  <A extends unknown[], C, B>(
-    pick: (args: A) => C,
-    respond: (
-      args: A
-    ) => <R extends HttpResponse<B>>([status, response]: R) => () => void
-  ) =>
-  <MO, EO extends HttpResponse<B>, AO extends HttpResponse<B>>(
-    rpc: (rpc: RPC<unknown, never, C>) => RPC<MO, EO, AO>
-  ): RpcHandler<MO, EO, AO, A> =>
-  (...args: A) =>
-    f.pipe(
-      rpc(of(pick(args))),
-      chainFirstIOK(respond(args)),
-      orElseFirstIOK(respond(args))
-    )();
+  <Args extends unknown[]>(fn: (...args: Args) => Context<unknown>) =>
+  <M, E extends Res, A extends Res>(
+    handle: (
+      self: Effect.Effect<Context<unknown>, never, unknown>
+    ) => Effect.Effect<Context<M>, E, A>,
+    respond = json
+  ): Handler<M, E, A, Args> =>
+  (...args) =>
+    pipe(
+      Effect.Do(),
+      handle,
+      respond,
+      Effect.provideService(context<unknown>(), fn(...args)),
+      Effect.runPromiseEither
+    );

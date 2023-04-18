@@ -1,6 +1,6 @@
 {
   "name": "@powrpc/server",
-  "version": "0.0.1-alpha.2",
+  "version": "0.0.1-alpha.3",
   "main": "./cjs/src/index.js",
   "module": "./esm/src/index.js",
   "types": "esm/src/index.d.ts",
@@ -8,9 +8,11 @@
     "clean": "rm -rf esm cjs"
   },
   "devDependencies": {
-    "io-ts": "^2.2.19"
+    "@effect/data": "^0.12.2",
+    "@effect/io": "^0.20.0"
   },
-  "dependencies": {
-    "fp-ts": "^2.13.1"
+  "peerDependencies": {
+    "@effect/data": "^0.12.2",
+    "@effect/io": "^0.20.0"
   }
 }

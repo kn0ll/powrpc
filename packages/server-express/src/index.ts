@@ -5,21 +5,20 @@ import * as RPC from "@powrpc/server";
 
 export * from "@powrpc/server";
 
-type Req = Request<unknown, any, any, ParsedQs, Record<string, any>>;
-
-type Res = Response<any, Record<string, any>>;
-
 export const handler = RPC.handler(
-  ([req]: [req: Req, res: Res]) => req,
-  ([_req, res]) =>
-    ([status, response]) =>
-    () => {
-      res.status(status);
-      res.setHeader("content-type", "application/json");
-      res.send(JSON.stringify(response));
-    }
+  (
+    req: Request<unknown, any, any, ParsedQs, Record<string, any>>,
+    res: Response<any, Record<string, any>>
+  ) =>
+    ({
+      method: req.method,
+      query: req.query,
+      body: req.body,
+      text: ({ status, body }) => res.status(status).send(body),
+      json: ({ status, body }) =>
+        res
+          .status(status)
+          .setHeader("content-type", "application/json")
+          .send(JSON.stringify(body)),
+    } as const)
 );
-
-export const method = RPC.method((req: Req) => req.method);
-
-export const query = RPC.query((req: Req) => req.query);
